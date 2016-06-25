@@ -1,0 +1,55 @@
+[global_config]
+  borderless = True
+  enabled_plugins = CustomCommandsMenu, TerminalShot, LaunchpadBugURLHandler
+  inactive_color_offset = 0.89
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.54
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Cousine 10
+    foreground_color = "#babdb6"
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
+  [[vim1]]
+    background_color = "#292727"
+    background_darkness = 0.94
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    exit_action = hold
+    font = PowerlineSymbols Medium 10
+    login_shell = True
+    scrollbar_position = hidden
+    show_titlebar = False
+  [[vim2]]
+    background_color = "#1c1c1c"
+    background_darkness = 0.94
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    exit_action = hold
+    font = Cousine 13
+    login_shell = True
+    scrollbar_position = hidden
+    show_titlebar = False
+  [[vim3]]
+    background_darkness = 0.54
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Cousine 10
+    foreground_color = "#babdb6"
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
