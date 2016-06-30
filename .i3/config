@@ -259,9 +259,10 @@ bindsym Mod1+f exec --no-startup-id "pgrep -c firefox && i3-msg '[class=\\"i3wm 
 
 #bindsym Mod1+m exec --no-startup-id "pgrep -c terminator -e weechat && i3-msg '[class=\\"weechat\\"] focus' || weechat"
 
-for_window [title="weechat"] move window to scratchpad
-#bindsym Mod1+m exec --no-startup-id terminator --title=weechat --profile=vim2 -e weechat, [title="weechat"] scratchpad show
-#bindsym Mod1+m for_window [title="weechat"] scratchpad show
+# for_window [title="weechat"] move window to scratchpad
+bindsym Mod1+Shift+m exec --no-startup-id terminator --role=weechat --profile=vim2 -e weechat
+# for_window [window_role=(?i)scratch] move window to scratchpad, resize set 1056 543, move absolute position center, move scratchpad
+bindsym Mod1+m [window_role=(?i)weechat] scratchpad show
 
 for_window [window_role=(?i)scratch] move window to scratchpad, resize set 1056 543, move absolute position center, move scratchpad
 bindsym Mod1+c [window_role=(?i)scratch], scratchpad show
@@ -311,6 +312,7 @@ for_window [title="Terminator Preferences"] floating enable
 # for_window [class="Vlc"] floating enable
 for_window [class=(?i)vlc] floating enable, move position 15 16, resize set 792 644 
 
+for_window [window_role=(?i)weechat] move window to scratchpad, resize set 1056 543, move absolute position center, move scratchpad, scratchpad show
 # }}}
 
 # i3-Gaps--------------------------------------------------------------------{{{
