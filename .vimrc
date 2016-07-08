@@ -51,6 +51,7 @@ Plugin 'mhinz/vim-startify'
 Plugin 'mhartington/oceanic-next'
 Plugin 'scrooloose/nerdtree'
 Plugin 'PotatoesMaster/i3-vim-syntax'
+Plugin 'tomtom/tcomment_vim'
 
 "Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
@@ -95,6 +96,18 @@ set foldlevelstart=0
 
 colorscheme desert 
 
+"Alt binds
+imap jj <Esc>
+nnoremap ; :
+map <C-\> :NERDTreeToggle<CR>
+"" Return to curser location
+autocmd BufReadPost *
+            \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+            \   exe "normal! g'\"" |
+            \ endif
+            " center buffer around cursor when opening files
+autocmd BufRead * normal zz
+
 " Mike-Hartington
  " Theme
 syntax enable
@@ -118,3 +131,20 @@ endif
 
 map <F2> :mksession! ~/Documents/svim/vim_session <cr> " Quick write session with F2
 map <F3> :source ~/Documents/svim/vim_session <cr>     " And load session with F3
+
+"" Startify
+" redir => test
+  " silent echo 'screenfetch'
+" redir END
+
+" let g:startify_custom_header =
+    " \ map(split(test), 'repeat(" ", 10) . v:val')
+
+function! s:filter_header(lines) abort
+        let longest_line   = max(map(copy(a:lines), 'len(v:val)'))
+        let centered_lines = map(copy(a:lines),
+            \ 'repeat(" ", (&columns / 2) - (longest_line / 2)) . v:val')
+        return centered_lines
+    endfunction
+let g:startify_custom_header = s:filter_header(['a', 'bb', 'ccc'])
+

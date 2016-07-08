@@ -9,7 +9,7 @@ i3-msg 'workspace 10:  Media; append_layout /home/arch/.config/i3/workspace_1
 
 #(terminator --transient_for mpsyt  &) 
 #(terminator --role 10.1 -e 'cvlc' &)    
-#(vlc --role 10.1 --class "vlc"  &)    
+(vlc --role 10.1 --class "vlc"  &)    
 (terminator --role 10.2 -e 'mpsyt; bash' &)
 (terminator --role 10.3 -e 'newsbeuter; bash' &)   
 (terminator --role 10.4 -e 'podbeuter; bash' &)

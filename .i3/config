@@ -195,7 +195,7 @@ exec_always --no-startup-id feh --bg-scale /home/arch/Pictures/Wallpapers/wallpa
 
 # Layout.json cmd reference:   i3-save-tree --workspace N > ~/.i3/workspace_N.json
 # i3-save-tree --workspace 8':  Nautilus' > ~/.i3/workspace_8a.json
-
+# i3-save-tree --workspace 10':  Media' > ~/.i3/workspace_10c.json
 
 #i3-save-tree --workspace 1':  Terminal' > ~/.i3/workspace_g1.json
 
@@ -260,7 +260,7 @@ bindsym Mod1+f exec --no-startup-id "pgrep -c firefox && i3-msg '[class=\\"i3wm 
 #bindsym Mod1+m exec --no-startup-id "pgrep -c terminator -e weechat && i3-msg '[class=\\"weechat\\"] focus' || weechat"
 
 # for_window [title="weechat"] move window to scratchpad
-bindsym Mod1+Shift+m exec --no-startup-id terminator --role=weechat --profile=vim2 -e weechat
+bindsym Mod1+Shift+m exec --no-startup-id terminator --role=weechat --profile=weechat -e weechat
 # for_window [window_role=(?i)scratch] move window to scratchpad, resize set 1056 543, move absolute position center, move scratchpad
 bindsym Mod1+m [window_role=(?i)weechat] scratchpad show
 
@@ -308,6 +308,7 @@ bindsym $mod+Mod1+Left workspace prev
 # Forced Floating------------------------------------------------------------{{{
 
 for_window [title="Terminator Preferences"] floating enable
+for_window [title="Customize Look and Feel"] floating enable
 #for_window [class="Nautilus"] floating enable
 # for_window [class="Vlc"] floating enable
 for_window [class=(?i)vlc] floating enable, move position 15 16, resize set 792 644 
@@ -322,8 +323,12 @@ for_window [class="^.*"] border pixel 0
 gaps inner 20
 gaps outer -5
 
-#smart_borders on|no_gaps
-#smart_borders no_gaps
+## If you want gaps to only be used if there is more than one container on the workspace, you can use
+# smart_gaps on
+
+## If activated, this patch will draw borders around a container only if it is not the only container in this workspace. It is disabled by default and can be activated with the command below. on will always activate it, while no_gaps will only activate it if the gap size to the edge of the screen is 0.
+# smart_borders no_gaps
+# smart_borders on
 
 # }}} 
 
