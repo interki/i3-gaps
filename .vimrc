@@ -146,5 +146,5 @@ function! s:filter_header(lines) abort
             \ 'repeat(" ", (&columns / 2) - (longest_line / 2)) . v:val')
         return centered_lines
     endfunction
-let g:startify_custom_header = s:filter_header(['a', 'bb', 'ccc'])
+let g:startify_custom_header = s:filter_header(['$vim', '', ''])
 
