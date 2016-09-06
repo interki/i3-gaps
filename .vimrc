@@ -21,7 +21,6 @@ runtime! archlinux.vim
 " and configure vim to your own liking!
 
 
-set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -147,4 +146,8 @@ function! s:filter_header(lines) abort
         return centered_lines
     endfunction
 let g:startify_custom_header = s:filter_header(['$vim', '', ''])
+
+"fix startify bug?
+"set viminfo='100,n$HOME/.vim/files/info/viminfo
+
 

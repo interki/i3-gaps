@@ -191,6 +191,14 @@ exec_always --no-startup-id feh --bg-scale /home/arch/Pictures/Wallpapers/wallpa
 
 # }}}
 
+# Startup System Script--------------------------------------------------------------{{{
+
+## doesn't work
+#exec_always --no-startup-id sudo mount -t cifs //10.0.0.20/HOME /mnt/HOME -o user=HOME,password=omeh
+
+
+# }}}
+
 # Reference /working --------------------------------------------------------{{{
 
 # Layout.json cmd reference:   i3-save-tree --workspace N > ~/.i3/workspace_N.json
@@ -255,7 +263,8 @@ for_window [class="Nautilus"] move window to scratchpad, resize set 1056 543, mo
 bindsym Mod1+n [class="Nautilus"], scratchpad show
 #no_focus [class="Nautilus"]
 
-bindsym Mod1+f exec --no-startup-id "pgrep -c firefox && i3-msg '[class=\\"i3wm - Vimperator\\"] focus' || firefox"
+bindsym mod1+f exec --no-startup-id "pgrep -c firefox && i3-msg '[class=\\"i3wm - vimperator\\"] focus' || firefox"
+# bindsym mod1+f exec --no-startup-id 'workspace_layout tabbed' "pgrep -c firefox && i3-msg '[class=\\"i3wm - Vimperator\\"] focus' || firefox"
 
 #bindsym Mod1+m exec --no-startup-id "pgrep -c terminator -e weechat && i3-msg '[class=\\"weechat\\"] focus' || weechat"
 
