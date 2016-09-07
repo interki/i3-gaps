@@ -8,5 +8,7 @@ ffmpeg -f x11grab -video_size 1366x768 -i $DISPLAY -f alsa -i default -c:v ffvhu
 ##- Compress to uploadable size 
 ffmpeg -i capture.mkv -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p -c:a copy output.mkv
 
+##- Mount HOME share
+sudo mount -t cifs //FREENAS/HOME /mnt/HOME -o user=HOME,uid=arch,gid=wheel,workgroup=workgroup,ip=10.0.0.20,iocharset=utf8
 
 
