@@ -214,6 +214,8 @@ exec_always --no-startup-id feh --bg-scale /home/arch/Pictures/Wallpapers/wallpa
 # Assign layouts-------------------------------------------------------------{{{
 
 exec_always --no-startup-id "i3-msg 'workspace 1:  Terminal; append_layout /home/arch/.config/i3/workspace.json'"
+# exec_always -no-startup-id /home/arch/.dotfiles/i3/.i3/load_layout_1.sh
+
 #exec_always --no-startup-id "i3-msg 'workspace 8:  Nautilus; append_layout /home/arch/.i3/workspace_8a.json'"
 #exec_always --no-startup-id "i3-msg 'workspace 10:  Media; append_layout /home/arch/.i3/workspace_10.json'"
 
@@ -264,6 +266,7 @@ bindsym Mod1+n [class="Nautilus"], scratchpad show
 #no_focus [class="Nautilus"]
 
 bindsym mod1+f exec --no-startup-id "pgrep -c firefox && i3-msg '[class=\\"i3wm - vimperator\\"] focus' || firefox"
+
 # bindsym mod1+f exec --no-startup-id 'workspace_layout tabbed' "pgrep -c firefox && i3-msg '[class=\\"i3wm - Vimperator\\"] focus' || firefox"
 
 #bindsym Mod1+m exec --no-startup-id "pgrep -c terminator -e weechat && i3-msg '[class=\\"weechat\\"] focus' || weechat"
@@ -320,7 +323,9 @@ for_window [title="Terminator Preferences"] floating enable
 for_window [title="Customize Look and Feel"] floating enable
 #for_window [class="Nautilus"] floating enable
 # for_window [class="Vlc"] floating enable
+
 for_window [class=(?i)vlc] floating enable, move position 15 16, resize set 792 644 
+# for_window [class="*[vV]lc*"] floating enable, move position 15 16, resize set 792 644 
 
 for_window [window_role=(?i)weechat] move window to scratchpad, resize set 1056 543, move absolute position center, move scratchpad, scratchpad show
 # }}}

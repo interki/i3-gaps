@@ -151,3 +151,5 @@ let g:startify_custom_header = s:filter_header(['$vim', '', ''])
 "set viminfo='100,n$HOME/.vim/files/info/viminfo
 
 
+
+
