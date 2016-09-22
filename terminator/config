@@ -20,12 +20,12 @@
     scrollbar_position = hidden
     show_titlebar = False
   [[pacli]]
-    background_color = "#1c1c1c"
+    background_color = "#2e3436"
     background_darkness = 0.16
     cursor_color = "#aaaaaa"
     exit_action = hold
-    font = Source Code Pro for Powerline Medium 10
-    foreground_color = "#73d216"
+    font = Liberation Mono for Powerline 10
+    foreground_color = "#bfc674"
     login_shell = True
     scrollbar_position = hidden
     show_titlebar = False
