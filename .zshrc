@@ -12,6 +12,7 @@ alias capture='ffmpeg -f x11grab -video_size 1366x768 -i $DISPLAY -f alsa -i def
 alias homeshare='sudo mount -t cifs //FREENAS/HOME /mnt/HOME -o user=HOME,uid=arch,gid=wheel,workgroup=workgroup,ip=10.0.0.20,iocharset=utf8'
 alias update='sudo yaourt -Syu --aur'
 alias restart='sudo shutdown -r now'
+alias tmuxa='tmux attach-session -t'
 
 
 #set $iprange = 10.0.0.

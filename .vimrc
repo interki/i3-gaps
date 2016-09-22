@@ -148,7 +148,7 @@ function! s:filter_header(lines) abort
 let g:startify_custom_header = s:filter_header(['$vim', '', ''])
 
 "fix startify bug?
-"set viminfo='100,n$HOME/.vim/files/info/viminfo
+" set viminfo='100,n$HOME/.vim/files/info/viminfo
 
 
 

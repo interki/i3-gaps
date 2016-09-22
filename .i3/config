@@ -273,8 +273,10 @@ bindsym mod1+f exec --no-startup-id "pgrep -c firefox && i3-msg '[class=\\"i3wm 
 
 # for_window [title="weechat"] move window to scratchpad
 bindsym Mod1+Shift+m exec --no-startup-id terminator --role=weechat --profile=weechat -e weechat
+bindsym Mod1+Shift+k exec --no-startup-id terminator --role=pacli --profile=pacli -e pacli
 # for_window [window_role=(?i)scratch] move window to scratchpad, resize set 1056 543, move absolute position center, move scratchpad
 bindsym Mod1+m [window_role=(?i)weechat] scratchpad show
+bindsym Mod1+k [window_role=(?i)pacli] scratchpad show
 
 for_window [window_role=(?i)scratch] move window to scratchpad, resize set 1056 543, move absolute position center, move scratchpad
 bindsym Mod1+c [window_role=(?i)scratch], scratchpad show
@@ -328,6 +330,7 @@ for_window [class=(?i)vlc] floating enable, move position 15 16, resize set 792 
 # for_window [class="*[vV]lc*"] floating enable, move position 15 16, resize set 792 644 
 
 for_window [window_role=(?i)weechat] move window to scratchpad, resize set 1056 543, move absolute position center, move scratchpad, scratchpad show
+for_window [window_role=(?i)pacli] move window to scratchpad, resize set 580 450, move absolute position center, move scratchpad, scratchpad show
 # }}}
 
 # i3-Gaps--------------------------------------------------------------------{{{
