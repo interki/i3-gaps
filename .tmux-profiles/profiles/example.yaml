@@ -1,0 +1,17 @@
+description: An example profile.
+sessions:
+  - name: example
+    attach: true
+    dir: /tmp/
+    windows:
+      - *editor
+      - name: staging
+        cmd: ls
+        panes:
+          - split: horizontal
+            cmd: ls 
+      - name: production
+        cmd: ls 
+        panes:
+          - split: horizontal
+            cmd: ls

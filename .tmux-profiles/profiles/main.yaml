@@ -1,0 +1,17 @@
+description: An example profile.
+sessions:
+  - name: Vi
+    attach: true
+    dir: ~/
+    windows:
+      - name: staging
+        cmd: 
+        panes:
+          - split: horizontal
+            cmd:  
+      - name: production
+        cmd:  
+        panes:
+          - split: horizontal
+            cmd: 
+      - *editor

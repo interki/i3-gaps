@@ -1,0 +1,9 @@
+description: TMUX profile
+sessions:
+  - name: tmux-profile
+    dir: ~/Development/tmux-profile
+    attach: true
+    windows:
+      - *editor
+      - name: manual
+        cmd: man tmux
