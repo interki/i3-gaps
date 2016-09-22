@@ -1,13 +1,10 @@
 [global_config]
   borderless = True
-  enabled_plugins = CustomCommandsMenu, TerminalShot, LaunchpadBugURLHandler
-  inactive_color_offset = 0.89
 [keybindings]
 [layouts]
   [[default]]
     [[[child1]]]
       parent = window0
-      profile = default
       type = Terminal
     [[[window0]]]
       parent = ""
@@ -15,34 +12,57 @@
 [plugins]
 [profiles]
   [[default]]
+    background_darkness = 0.53
+    background_type = transparent
+    cursor_color = "#8ae234"
+    cursor_color_fg = False
+    cursor_shape = ibeam
+    scrollbar_position = hidden
+    show_titlebar = False
+  [[pacli]]
+    background_color = "#2e3436"
+    background_darkness = 0.94
+    cursor_color = "#aaaaaa"
+    exit_action = hold
+    font = Source Code Pro for Powerline Medium 10
+    foreground_color = "#73d216"
+    login_shell = True
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
+  [[scratch]]
     background_darkness = 0.54
     background_type = transparent
     cursor_color = "#aaaaaa"
-    font = Cousine 10
+    font = Source Code Pro for Powerline Medium 10
     foreground_color = "#babdb6"
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
+    use_system_font = False
   [[vim1]]
     background_color = "#292727"
     background_darkness = 0.94
     background_type = transparent
     cursor_color = "#aaaaaa"
     exit_action = hold
-    font = PowerlineSymbols Medium 10
+    font = Cousine for Powerline 10
     login_shell = True
     scrollbar_position = hidden
     show_titlebar = False
+    use_system_font = False
   [[vim2]]
     background_color = "#1c1c1c"
     background_darkness = 0.94
     background_type = transparent
     cursor_color = "#aaaaaa"
     exit_action = hold
-    font = Cousine 13
+    font = Cousine for Powerline 11
     login_shell = True
     scrollbar_position = hidden
     show_titlebar = False
+    use_system_font = False
   [[vim3]]
     background_darkness = 0.54
     background_type = transparent
@@ -50,6 +70,16 @@
     font = Cousine 10
     foreground_color = "#babdb6"
     scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
+  [[weechat]]
+    background_color = "#00212a"
+    background_darkness = 0.94
+    cursor_color = "#aaaaaa"
+    exit_action = hold
+    font = Source Code Pro for Powerline Medium 10
+    login_shell = True
     scrollbar_position = hidden
     show_titlebar = False
     use_system_font = False
