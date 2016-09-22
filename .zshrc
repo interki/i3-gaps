@@ -41,3 +41,4 @@ promptinit
 
 # This will set the default prompt to the walters theme
 # prompt walters
+source /home/arch/builds/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
