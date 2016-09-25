@@ -43,6 +43,7 @@ Plugin 'reedes/vim-pencil'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'junegunn/limelight.vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 Plugin 'junegunn/vim-pseudocl'
 Plugin 'junegunn/vim-fnr'
