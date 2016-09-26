@@ -17,6 +17,7 @@
     cursor_color = "#8ae234"
     cursor_color_fg = False
     cursor_shape = ibeam
+    font = PragmataPro Mono Bold 10
     scrollbar_position = hidden
     show_titlebar = False
   [[pacli]]

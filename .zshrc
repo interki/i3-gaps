@@ -14,8 +14,8 @@ alias update='sudo yaourt -Syu --aur'
 alias restart='sudo shutdown -r now'
 alias tmuxa='tmux attach-session -t'
 #sort mirrors by top 5 existing//top 200 reciently updated
-alias 'sortmirror-s'='reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist'
-alias 'sortmirror-l'='reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist'
+alias 'sortmirror-s'='sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist'
+alias 'sortmirror-l'='sudo reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist'
 alias 'commit'='git commit -am "up"'
 
 
@@ -49,7 +49,7 @@ promptinit
 # prompt walters
 source /home/arch/builds/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# append ls to cd
+# append ls to cd 'ls -F originally'
 cd() {
-  echo && builtin cd "$@" && ls -F;
+  echo && builtin cd "$@" && l;
 }
