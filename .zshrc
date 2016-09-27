@@ -6,8 +6,8 @@ alias l='ls -a --color=auto'
 alias grep='grep --color=auto'
 #alias ssh='ssh -R 10999:localhost:22'
 alias c='clear'
-alias livestreamer='livestreamer -p vlc'
-alias pass='--player-passthrough hls'
+# alias livestreamer='livestreamer -p vlc'
+# alias pass='--player-passthrough hls'
 alias capture='ffmpeg -f x11grab -video_size 1366x768 -i $DISPLAY -f alsa -i default -c:v ffvhuff -c:a flac ~/Desktop/capture.mkv'
 alias homeshare='sudo mount -t cifs //FREENAS/HOME /mnt/HOME -o user=HOME,uid=arch,gid=wheel,workgroup=workgroup,ip=10.0.0.20,iocharset=utf8'
 alias update='sudo yaourt -Syu --aur'
@@ -18,14 +18,16 @@ alias 'sortmirror-s'='sudo reflector --verbose -l 5 --sort rate --save /etc/pacm
 alias 'sortmirror-l'='sudo reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist'
 alias 'commit'='git commit -am "up"'
 
-
-
 #set $iprange = 10.0.0.
 
 alias db-pihole='dbclient debian@10.0.0.55'
-alias db-fnas='dbclient debian@10.0.0.20'
+alias db-fnas='dbclient SHOME@10.0.0.20'
 alias db-squid='dbclient bsd@10.0.0.75'
 alias db-wbserv='dbclient bsd@10.0.0.85'
+
+#alias take input test 
+alias fish='echo -n "Enter IP: " && read IP && ping $IP'
+alias livestreamer='echo -n "Enter URL: " && read URL && livestreamer -p vlc $URL high --player-passthrough hls'
 
 alias ltp="ruby ~/.tmux-profiles/load-tmux-profile.rb"
 
