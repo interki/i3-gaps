@@ -109,6 +109,16 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
 "vim:filetype=i3
 map <F2> :mksession! ~/Documents/svim/vim_session <cr> " Quick write session with F2
 map <F3> :source ~/Documents/svim/vim_session <cr>     " And load session with F3
+
+function! s:filter_header(lines) abort
+        let longest_line   = max(map(copy(a:lines), 'len(v:val)'))
+        let centered_lines = map(copy(a:lines),
+            \ 'repeat(" ", (&columns / 2) - (longest_line / 2)) . v:val')
+        return centered_lines
+    endfunction
+let g:startify_custom_header = s:filter_header(['$vim', '', ''])
+

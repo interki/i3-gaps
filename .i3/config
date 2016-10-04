@@ -225,7 +225,7 @@ exec_always --no-startup-id "i3-msg 'workspace 1:  Terminal; append_layout /h
 
 # -wksp 1-
 
-exec_always terminator --role 1.2 -e 'ranger; bash'
+exec_always terminator --role 1.2 -e 'ranger; zsh'
 exec_always terminator --role 1.3 -e 'htop; bash -l' #'nmtui-connect; bash -l' #nmtui #'ssh bsd@192.168.0.19' #; bash -l'
 exec_always terminator --role 1.1 -e 'tmux -u' #vim ~/.vimrc'" #; bash' #.config/i3/config
 
@@ -286,7 +286,11 @@ bindsym Mod1+c [window_role=(?i)scratch], scratchpad show
 #for_window [class=(?i)vlc] floating enable, move position 944 -2, resize set 792 645, move scratchpad, scratchpad show
 ##for_window [class=(?i)vlc] floating enable, move position 15 16, resize set 792 644, move scratchpad, scratchpad show 
 #for_window [class=(?i)vlc], move position 15 16, resize set 792 644
+# for_window [class=(?i)vlc] move window to scratchpad, resize set 777 624, move absolute position 17 34
 bindsym Mod1+Shift+v [class=(?i)vlc], move position 944 0, resize set 423 240, move scratchpad, scratchpad show
+bindsym $mod+Shift+v [class=(?i)vlc], move position 16 16, resize set 779 634, move scratchpad, scratchpad show
+#-Airblader Example
+bindsym $mod+y fullscreen disable; floating enable; resize set 600 400; sticky enable; move window to position 1940 54
 bindsym Mod1+v [class=(?i)vlc], scratchpad show
 
 #for_window [class="vlc"] move window to scratchpad
@@ -326,7 +330,7 @@ for_window [title="Customize Look and Feel"] floating enable
 #for_window [class="Nautilus"] floating enable
 # for_window [class="Vlc"] floating enable
 
-for_window [class=(?i)vlc] floating enable, move position 15 16, resize set 792 644 
+for_window [class=(?i)vlc] floating enable, move position 15 16, resize set 782 634 
 # for_window [class="*[vV]lc*"] floating enable, move position 15 16, resize set 792 644 
 
 for_window [window_role=(?i)weechat] move window to scratchpad, resize set 1056 543, move absolute position center, move scratchpad, scratchpad show

@@ -14,8 +14,9 @@ alias capture='ffmpeg -f x11grab -video_size 1366x768 -i $DISPLAY -f alsa -i def
 alias homeshare='sudo mount -t cifs //FREENAS/HOME /mnt/HOME -o user=HOME,uid=arch,gid=wheel,workgroup=workgroup,ip=10.0.0.20,iocharset=utf8'
 alias hsync='rsync -r -v --progress -s /home/arch/Documents/sync/ /mnt/HOME/Documents/sync'
 
-alias update='sudo yaourt -Syu --aur'
+alias update='yaourt -Syu --aur'
 alias restart='sudo shutdown -r now'
+alias shutdown='sudo shutdown now'
 alias tmuxa='tmux attach-session -t'
 #sort mirrors by top 5 existing//top 200 reciently updated
 alias 'sortmirror-s'='sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist'
@@ -29,6 +30,7 @@ alias db-fnas='dbclient SHOME@10.0.0.20'
 alias db-squid='dbclient bsd@10.0.0.75'
 alias db-wbserv='dbclient bsd@10.0.0.85'
 
+alias twitch='twitch-curses'
 ##-alias take input test 
 # alias fish='echo -n "Enter IP: " && read IP && ping $IP'
 alias livestreamer='echo -n "Enter URL: " && read URL && livestreamer -p vlc $URL high --player-passthrough hls'

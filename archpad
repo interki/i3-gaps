@@ -1,3 +1,8 @@
+##- undo git commit
+git reset --soft HEAD~1
+##- undo git push
+git revert HEAD
+
 ##- pacman -show explicitly installed packages
 pacman -Qet
 
