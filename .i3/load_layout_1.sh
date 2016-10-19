@@ -8,9 +8,9 @@ i3-msg 'workspace 1:  Terminal; append_layout /home/arch/.config/i3/workspace
 #(terminator &)
 #(terminator &)
 
-exec_always terminator --role 1.2 -e 'ranger; zsh'                                                                          
-exec_always terminator --role 1.3 -e 'htop; bash -l' #'nmtui-connect; bash -l' #nmtui #'ssh bsd@192.168.0.19' #; bash -l'    
-exec_always terminator --role 1.1 -e 'tmux -u' #vim ~/.vimrc'" #; bash' #.config/i3/config         
+(terminator --role 1.2 -e 'ranger; zsh' &)                                                                          
+(terminator --role 1.3 -e 'htop; bash -l' &) #'nmtui-connect; bash -l' #nmtui #'ssh bsd@192.168.0.19' #; bash -l'    
+(terminator --role 1.1 -e 'tmux -u; zsh' &) #vim ~/.vimrc'" #; bash' #.config/i3/config         
 
 
 
