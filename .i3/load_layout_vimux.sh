@@ -10,6 +10,7 @@ i3-msg 'workspace 9: imux'
 #(terminator &)
 
 (terminator --role vimux --command=/home/arch/.i3/tbash.sh &)
+# (terminator --role vimux --command=/home/arch/.i3/vimuxbash.sh; zsh &)
 # (terminator --role vimux --command='ruby ~/.tmux-profiles/load-tmux-profile.rb main; zsh' &)
 
 # (terminator --role 1.2 -e 'ranger; zsh' &)                                                                          
