@@ -218,7 +218,8 @@ exec_always --no-startup-id feh --bg-scale /home/arch/Pictures/Wallpapers/wallpa
 ###exec_always --no-startup-id "i3-msg 'workspace 1:  Terminal; append_layout /home/arch/.config/i3/workspace.json'"
 
 exec_always --no-startup-id /home/arch/.dotfiles/i3/.i3/load_layout_1.sh
-exec_always --no-startup-id exec /home/arch/.dotfiles/i3/.i3/load_layout_vimux.sh
+# exec_always --no-startup-id exec /home/arch/.dotfiles/i3/.i3/load_layout_vimux.sh
+bindsym $mod+Mod1+9 exec --no-startup-id exec /home/arch/.dotfiles/i3/.i3/load_layout_vimux.sh
 
 #exec_always --no-startup-id "i3-msg 'workspace 8:  Nautilus; append_layout /home/arch/.i3/workspace_8a.json'"
 #exec_always --no-startup-id "i3-msg 'workspace 10:  Media; append_layout /home/arch/.i3/workspace_10.json'"
@@ -256,6 +257,7 @@ bindsym $mod+Mod1+0 exec --no-startup-id exec ~/.config/i3/load_layout_10a.sh
 #exec_always --no-startup-id visual-studio-code 
 exec --no-startup-id nautilus
 exec --no-startup-id compton
+exec --no-startup-id easystroke
 #exec_always --no-startup-id i3-msg 'workspace 9: imux; exec terminator --command=~/.i3/tbash.sh'
 ##### exec_always --no-startup-id exec i3-msg 'workspace 9: imux; exec terminator --role vimux --command=~/.i3/tbash.sh'
 # exec_always --no-startup-id exec i3-msg 'workspace 9: imux; exec terminator --role vimux --command=/home/arch/.dotfiles/i3/.i3/vimuxbash.sh'
@@ -271,7 +273,8 @@ for_window [class="Nautilus"] move window to scratchpad, resize set 1056 543, mo
 bindsym Mod1+n [class="Nautilus"], scratchpad show
 #no_focus [class="Nautilus"]
 
-bindsym mod1+f exec --no-startup-id "pgrep -c firefox && i3-msg '[class=\\"i3wm - vimperator\\"] focus' || firefox"
+# bindsym mod1+f exec --no-startup-id "pgrep -c firefox && i3-msg '[class=\\"i3wm - vimperator\\"] focus' || firefox"
+bindsym mod1+f exec --no-startup-id pgrep -c firefox && i3-msg '[class="Firefox"] focus' || firefox
 
 # bindsym mod1+f exec --no-startup-id 'workspace_layout tabbed' "pgrep -c firefox && i3-msg '[class=\\"i3wm - Vimperator\\"] focus' || firefox"
 
