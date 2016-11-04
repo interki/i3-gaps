@@ -116,8 +116,8 @@ bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace $workspace7
 bindsym $mod+8 workspace $workspace8
-bindsym $mod+9 workspace $workspace9
-bindsym $mod+0 workspace $workspace10 #exec --no-startup-id ~/.i3/load_layout_10a.sh
+#bindsym $mod+9 workspace $workspace9 #replaced line 224
+#bindsym $mod+0 workspace $workspace10 #replaced line 254
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -219,7 +219,9 @@ exec_always --no-startup-id feh --bg-scale /home/arch/Pictures/Wallpapers/wallpa
 
 exec_always --no-startup-id /home/arch/.dotfiles/i3/.i3/load_layout_1.sh
 # exec_always --no-startup-id exec /home/arch/.dotfiles/i3/.i3/load_layout_vimux.sh
-bindsym $mod+Mod1+9 exec --no-startup-id exec /home/arch/.dotfiles/i3/.i3/load_layout_vimux.sh
+#bindsym $mod+Mod1+9 exec --no-startup-id exec /home/arch/.dotfiles/i3/.i3/load_layout_vimux.sh
+#bindsym $mod+Mod1+9 exec --no-startup-id pgrep -c -a -f 'tmux attach -t Vi' && i3-msg '[window_role="vimux"] focus' || /home/arch/.dotfiles/i3/.i3/load_layout_vimux.sh
+bindsym $mod+9 exec --no-startup-id pgrep -c -f 'tmux attach -t Vi' && i3-msg '[window_role="vimux"] focus' || /home/arch/.dotfiles/i3/.i3/load_layout_vimux.sh
 
 #exec_always --no-startup-id "i3-msg 'workspace 8:  Nautilus; append_layout /home/arch/.i3/workspace_8a.json'"
 #exec_always --no-startup-id "i3-msg 'workspace 10:  Media; append_layout /home/arch/.i3/workspace_10.json'"
@@ -247,7 +249,9 @@ bindsym $mod+Mod1+9 exec --no-startup-id exec /home/arch/.dotfiles/i3/.i3/load_l
 # Wksp script binds----------------------------------------------------------{{{
 #
 #bindsym $mod+Mod1+0 exec --no-startup-id ~/.i3/load_layout_10.sh
-bindsym $mod+Mod1+0 exec --no-startup-id exec ~/.config/i3/load_layout_10a.sh
+# bindsym $mod+Mod1+0 exec --no-startup-id exec ~/.config/i3/load_layout_10a.sh #original working media exec
+# bindsym $mod+Mod1+0 exec --no-startup-id pgrep -c mpsyt && i3-msg '[window_role="10.2"] focus' || ~/.config/i3/load_layout_10a.sh
+bindsym $mod+0 exec --no-startup-id pgrep -c mpsyt && i3-msg '[window_role="10.2"] focus' || ~/.config/i3/load_layout_10a.sh
 #bindsym $mod+Mod1+8 exec --no-startup-id ~/.config/i3/load_layout_8a.sh #exec --no-startup-id nautilus 
 
 # }}}
@@ -274,6 +278,7 @@ bindsym Mod1+n [class="Nautilus"], scratchpad show
 #no_focus [class="Nautilus"]
 
 # bindsym mod1+f exec --no-startup-id "pgrep -c firefox && i3-msg '[class=\\"i3wm - vimperator\\"] focus' || firefox"
+# open firefox, if already open focus firefox
 bindsym mod1+f exec --no-startup-id pgrep -c firefox && i3-msg '[class="Firefox"] focus' || firefox
 
 # bindsym mod1+f exec --no-startup-id 'workspace_layout tabbed' "pgrep -c firefox && i3-msg '[class=\\"i3wm - Vimperator\\"] focus' || firefox"
