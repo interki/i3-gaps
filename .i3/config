@@ -185,6 +185,8 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3blocks -c ~/.i3blocks.conf
+        # status_command python /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+	# font pango:PowerlineFont 12
 }
 
 # }}}
@@ -206,6 +208,7 @@ exec_always --no-startup-id feh --bg-scale /home/arch/Pictures/Wallpapers/wallpa
 # Layout.json cmd reference:   i3-save-tree --workspace N > ~/.i3/workspace_N.json
 # i3-save-tree --workspace 8':  Nautilus' > ~/.i3/workspace_8a.json
 # i3-save-tree --workspace 10':  Media' > ~/.i3/workspace_10c.json
+# i3-save-tree --workspace 9': imux' > ~/.i3/workspace_9.json
 
 #i3-save-tree --workspace 1':  Terminal' > ~/.i3/workspace_g1.json
 
@@ -219,8 +222,9 @@ exec_always --no-startup-id feh --bg-scale /home/arch/Pictures/Wallpapers/wallpa
 
 exec_always --no-startup-id /home/arch/.dotfiles/i3/.i3/load_layout_1.sh
 # exec_always --no-startup-id exec /home/arch/.dotfiles/i3/.i3/load_layout_vimux.sh
-#bindsym $mod+Mod1+9 exec --no-startup-id exec /home/arch/.dotfiles/i3/.i3/load_layout_vimux.sh
-bindsym $mod+9 exec --no-startup-id pgrep -c -f tmux attach -t Vi && i3-msg '[window_role="vimux"] focus' || ~/.config/i3/load_layout_vimux.sh
+bindsym $mod+Mod1+9 exec --no-startup-id exec /home/arch/.dotfiles/i3/.i3/load_layout_vimux.sh
+bindsym $mod+9 exec --no-startup-id pgrep -c -f Vi && i3-msg '[window_role="vimux"] focus' || ~/.config/i3/load_layout_vimux.sh
+bindsym Mod1+j exec --no-startup-id pgrep -c pacli && i3-msg '[window_role="pacli"] scratchpad show' || terminator --role=pacli --profile=pacli -e pacli
 
 # bindsym $mod+9 exec --no-startup-id pgrep -c -f 'tmux attach -t Vi' && i3-msg '[window_role="vimux"] focus' || /home/arch/.dotfiles/i3/.i3/load_layout_vimux.sh
 
@@ -248,7 +252,7 @@ bindsym $mod+9 exec --no-startup-id pgrep -c -f tmux attach -t Vi && i3-msg '[wi
 # }}}
 
 # Wksp script binds----------------------------------------------------------{{{
-#
+
 #bindsym $mod+Mod1+0 exec --no-startup-id ~/.i3/load_layout_10.sh
 # bindsym $mod+Mod1+0 exec --no-startup-id exec ~/.config/i3/load_layout_10a.sh #original working media exec
 # bindsym $mod+Mod1+0 exec --no-startup-id pgrep -c mpsyt && i3-msg '[window_role="10.2"] focus' || ~/.config/i3/load_layout_10a.sh

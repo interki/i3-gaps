@@ -20,7 +20,8 @@ alias shutdown='sudo shutdown now'
 #-tmux
 alias ltp="ruby ~/.tmux-profiles/load-tmux-profile.rb"
 alias tmuxa='tmux attach-session -t'
-alias tmuxk='tmux kill-server'
+alias tmuxk='tmux kill-session'
+alias tmuxka='tmux kill-server'
 #-sort mirrors by top 5 existing//top 200 reciently updated
 alias 'sortmirror-s'='sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist'
 alias 'sortmirror-l'='sudo reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist'
