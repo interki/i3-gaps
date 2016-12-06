@@ -57,7 +57,7 @@ def loopcheck():
             print(user,"online. stop.")
             filename = user+" - "+datetime.datetime.now().strftime("%Y-%m-%d %Hh%Mm%Ss")+" - "+(info['stream']).get("channel").get("status")+".mp4"
             filename = format_filename(filename)
-            subprocess.call(["livestreamer", "twitch.tv/"+user,quality,"-o",directory+filename])
+            subprocess.call(["streamlink", "twitch.tv/"+user,quality,"-o",directory+filename])
             print("Stream is done. Going back to checking..")
             time.sleep(15)
 
