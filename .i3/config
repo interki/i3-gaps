@@ -220,7 +220,8 @@ exec_always --no-startup-id feh --bg-scale /home/arch/Pictures/Wallpapers/wallpa
 
 ###exec_always --no-startup-id "i3-msg 'workspace 1:  Terminal; append_layout /home/arch/.config/i3/workspace.json'"
 
-exec_always --no-startup-id /home/arch/.dotfiles/i3/.i3/load_layout_1.sh
+# exec_always --no-startup-id /home/arch/.dotfiles/i3/.i3/load_layout_1.sh
+exec --no-startup-id /home/arch/.dotfiles/i3/.i3/load_layout_1.sh
 # exec_always --no-startup-id exec /home/arch/.dotfiles/i3/.i3/load_layout_vimux.sh
 bindsym $mod+Mod1+9 exec --no-startup-id exec /home/arch/.dotfiles/i3/.i3/load_layout_vimux.sh
 bindsym $mod+9 exec --no-startup-id pgrep -c -f Vi && i3-msg '[window_role="vimux"] focus' || ~/.config/i3/load_layout_vimux.sh
@@ -285,6 +286,8 @@ bindsym Mod1+n [class="Nautilus"], scratchpad show
 # bindsym mod1+f exec --no-startup-id "pgrep -c firefox && i3-msg '[class=\\"i3wm - vimperator\\"] focus' || firefox"
 # open firefox, if already open focus firefox
 bindsym mod1+f exec --no-startup-id pgrep -c firefox && i3-msg '[class="Firefox"] focus' || firefox
+# weechat if not then 
+bindsym mod1+m exec --no-startup-id pgrep -c weechat && i3-msg '[window_role=(?i)weechat] scratchpad show' || terminator --role=weechat --profile=weechat -e weechat
 
 # bindsym mod1+f exec --no-startup-id 'workspace_layout tabbed' "pgrep -c firefox && i3-msg '[class=\\"i3wm - Vimperator\\"] focus' || firefox"
 
@@ -294,7 +297,9 @@ bindsym mod1+f exec --no-startup-id pgrep -c firefox && i3-msg '[class="Firefox"
 bindsym Mod1+Shift+m exec --no-startup-id terminator --role=weechat --profile=weechat -e weechat
 bindsym Mod1+Shift+k exec --no-startup-id terminator --role=pacli --profile=pacli -e pacli
 # for_window [window_role=(?i)scratch] move window to scratchpad, resize set 1056 543, move absolute position center, move scratchpad
-bindsym Mod1+m [window_role=(?i)weechat] scratchpad show
+
+##- old binds now elseif toggles
+#bindsym Mod1+m [window_role=(?i)weechat] scratchpad show
 bindsym Mod1+k [window_role=(?i)pacli] scratchpad show
 
 for_window [window_role=(?i)scratch] move window to scratchpad, resize set 1056 543, move absolute position center, move scratchpad
@@ -341,7 +346,8 @@ bindsym $mod+Mod1+Right workspace next
 bindsym $mod+Mod1+Left workspace prev 
 
 #non-defualt binds/settings
-bindsym Mod1+Tab workspace_auto_back_and_forth
+# bindsym Mod1+Tab workspace_auto_back_and_forth
+bindsym Mod1+Tab workspace" Scratch"
 workspace_auto_back_and_forth yes
 force_display_urgency_hint 500 ms
 # focus_on_window_activation smart|urgent|focus|none
@@ -350,12 +356,20 @@ force_display_urgency_hint 500 ms
 
 # Forced Floating------------------------------------------------------------{{{
 
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
 for_window [title="Terminator Preferences"] floating enable
 for_window [title="Customize Look and Feel"] floating enable
 #for_window [class="Nautilus"] floating enable
+for_window [class=(?!)file_properties] floating enable #doesn't work
 # for_window [class="Vlc"] floating enable
 
 for_window [class=(?i)vlc] floating enable, move position 15 16, resize set 782 634 
+
 # for_window [class="*[vV]lc*"] floating enable, move position 15 16, resize set 792 644 
 
 for_window [window_role=(?i)weechat] move window to scratchpad, resize set 1056 543, move absolute position center, move scratchpad, scratchpad show

@@ -22,6 +22,7 @@ alias ltp="ruby ~/.tmux-profiles/load-tmux-profile.rb"
 alias tmuxa='tmux attach-session -t'
 alias tmuxk='tmux kill-session'
 alias tmuxka='tmux kill-server'
+alias tmuxl='tmux list-session'
 #-sort mirrors by top 5 existing//top 200 reciently updated
 alias 'sortmirror-s'='sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist'
 alias 'sortmirror-l'='sudo reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist'
@@ -39,12 +40,13 @@ alias db-wbserv='dbclient bsd@10.0.0.85'
 alias twitch='twitch-curses'
 ##-alias take input test 
 # alias fish='echo -n "Enter IP: " && read IP && ping $IP'
-alias livestreamer='echo -n "Enter URL: " && read URL && livestreamer -p vlc $URL high --player-passthrough hls'
+alias livestreamer='echo -n "Enter URL: " && read URL && streamlink -p vlc $URL high --player-passthrough hls'
 #-googler
 alias g='googler'
 alias gg='googler -n 5'
 alias gn='googler -N'
-
+#archpad
+alias pad='vim /home/arch/.dotfiles/i3/archpad'
 
 #bindkey "${terminfo[khome]}" beginning-of-line
 #bindkey "${terminfo[kend]}" end-of-line

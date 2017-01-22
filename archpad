@@ -12,7 +12,7 @@ pacman -Qet
 !sudo chattr +i /etc/resolv.conf
 
 ##- Display current resolution info
-dpyinfo | grep -B2 resolution
+xdpyinfo | grep -B2 resolution
 
 ##- Screen capture no compression
 ffmpeg -f x11grab -video_size 1366x768 -i $DISPLAY -f alsa -i default -c:v ffvhuff -c:a flac ~/Desktop/capture.mkv
@@ -23,4 +23,5 @@ ffmpeg -i capture.mkv -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p -c:a co
 ##- Mount HOME share
 sudo mount -t cifs //FREENAS/HOME /mnt/HOME -o user=HOME,uid=arch,gid=wheel,workgroup=workgroup,ip=10.0.0.20,iocharset=utf8
 
-
+##- Current glib version working with terminator gtk
+upgraded glib2 (2.49.7+6+g3602f93-1 -> 2.50.2-1)
