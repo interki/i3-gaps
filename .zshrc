@@ -47,6 +47,9 @@ alias gg='googler -n 5'
 alias gn='googler -N'
 #archpad
 alias pad='vim /home/arch/.dotfiles/i3/archpad'
+#weather
+alias weather='curl -s wttr.in/Brisbane | head -7'
+alias weather-l='curl -s wttr.in/Brisbane'
 
 #bindkey "${terminfo[khome]}" beginning-of-line
 #bindkey "${terminfo[kend]}" end-of-line
@@ -68,7 +71,7 @@ promptinit
 # prompt walters
 source /home/arch/builds/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# append ls to cd 'ls -F originally'
+# append ls to cd (ls -F originally)
 cd() {
   echo && builtin cd "$@" && l;
 }

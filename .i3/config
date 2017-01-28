@@ -257,7 +257,7 @@ bindsym Mod1+j exec --no-startup-id pgrep -c pacli && i3-msg '[window_role="pacl
 #bindsym $mod+Mod1+0 exec --no-startup-id ~/.i3/load_layout_10.sh
 # bindsym $mod+Mod1+0 exec --no-startup-id exec ~/.config/i3/load_layout_10a.sh #original working media exec
 # bindsym $mod+Mod1+0 exec --no-startup-id pgrep -c mpsyt && i3-msg '[window_role="10.2"] focus' || ~/.config/i3/load_layout_10a.sh
-bindsym $mod+0 exec --no-startup-id pgrep -c mpsyt && i3-msg '[window_role="10.2"] focus' || ~/.config/i3/load_layout_10a.sh
+bindsym $mod+0 exec --no-startup-id pgrep -c mpsyt && i3-msg '[window_role="10.2"] focus' || /home/arch/.dotfiles/i3/.i3/load_layout_10b.sh
 #bindsym $mod+Mod1+8 exec --no-startup-id ~/.config/i3/load_layout_8a.sh #exec --no-startup-id nautilus 
 
 # }}}
