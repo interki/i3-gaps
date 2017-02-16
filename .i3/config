@@ -286,7 +286,7 @@ bindsym Mod1+n [class="Nautilus"], scratchpad show
 
 # bindsym mod1+f exec --no-startup-id "pgrep -c firefox && i3-msg '[class=\\"i3wm - vimperator\\"] focus' || firefox"
 # open firefox, if already open focus firefox
-bindsym mod1+f exec --no-startup-id pgrep -c firefox && i3-msg '[class="Firefox"] focus, layout stacking' || firefox
+bindsym mod1+f exec --no-startup-id pgrep -c firefox && i3-msg '[class="Firefox"] focus' || firefox
 # weechat if not then 
 bindsym mod1+m exec --no-startup-id pgrep -c weechat && i3-msg '[window_role=(?i)weechat] scratchpad show' || terminator --role=weechat --profile=weechat -e weechat
 
@@ -381,19 +381,20 @@ for_window [window_role=(?i)pacli] move window to scratchpad, resize set 580 450
 
 ## Manual management of external displays
 # Set the shortcuts and what they do
-# set $mode_display Ext Screen (v) VGA ON, (h) HDMI ON, (x) VGA OFF, (y) HDMI OFF
-# mode "$mode_display" {
-#     bindsym v exec --no-startup-id xrandr --output VGA1 --auto --right-of LVDS1, mode "default"
-#     bindsym h exec --no-startup-id xrandr --output HDMI1 --auto --right-of LVDS1, mode "default"
-#     bindsym x exec --no-startup-id xrandr --output VGA1 --auto --off, mode "default"
-#     bindsym y exec --no-startup-id xrandr --output HDMI1 --auto --off, mode "default"
+set $mode_display Ext Screen (v) HMDI above, (h) HDMI, (x) laptop, (y) up, (d) down
+mode "$mode_display" {
+    bindsym v exec --no-startup-id xrandr --output "HDMI-1" --off --output "eDP-1" --auto && xrandr --output eDP-1 --auto --output HDMI-1 --auto --above eDP-1, mode "default"
+    bindsym h exec --no-startup-id xrandr --output "eDP-1" --off --output "HDMI-1" --auto, mode "default"
+    bindsym x exec --no-startup-id xrandr --output "HDMI-1" --off --output "eDP-1" --auto, mode "default"
+    bindsym y exec --no-startup-id i3-msg move workspace to output up, mode "default"
+    bindsym d exec --no-startup-id i3-msg move workspace to output down, mode "default"
 #
-#     # back to normal: Enter or Escape
-#     bindsym Return mode "default"
-#     bindsym Escape mode "default"
-# }
-# # Declare here the shortcut to bring the display selection menu
-# bindsym $mod+x mode "$mode_display"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+# Declare here the shortcut to bring the display selection menu
+bindsym $mod+x mode "$mode_display"
 
 # }}}
 
