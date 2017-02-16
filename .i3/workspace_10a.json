@@ -9,7 +9,10 @@
        "x": 43,
        "y": 24
     },
-    "name": "VLC media player",
+    //"name": "VLC media player",
+    "name": "VLC spacer",
+    //attempt to id for transparency
+    "window_role": "spacer$",
     "percent": 0.59,
     "swallows": [
        {

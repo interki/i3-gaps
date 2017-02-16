@@ -10,6 +10,8 @@ alias c='clear'
 # alias ?='bind'
 #-fmpeg
 alias capture='ffmpeg -f x11grab -video_size 1366x768 -i $DISPLAY -f alsa -i default -c:v ffvhuff -c:a flac ~/Documents/videos/capture.mkv'
+alias compress='ffmpeg -i ~/Documents/videos/capture.mkv -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p -c:a copy ~/Documents/videos/output.mkv
+'
 #-network
 alias homeshare='sudo mount -t cifs //FREENAS/HOME /mnt/HOME -o user=HOME,uid=arch,gid=wheel,workgroup=workgroup,ip=10.0.0.20,iocharset=utf8'
 alias hsync='rsync -r -v --progress -s /home/arch/Documents/sync/ /mnt/HOME/Documents/sync'
@@ -40,7 +42,7 @@ alias db-wbserv='dbclient bsd@10.0.0.85'
 alias twitch='twitch-curses'
 ##-alias take input test 
 # alias fish='echo -n "Enter IP: " && read IP && ping $IP'
-alias livestreamer='echo -n "Enter URL: " && read URL && streamlink -p vlc $URL high --player-passthrough hls'
+alias livestreamer='echo -n "Enter URL: " && read URL && streamlink $URL high --player-passthrough hls'
 #-googler
 alias g='googler'
 alias gg='googler -n 5'

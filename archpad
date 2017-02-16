@@ -25,3 +25,6 @@ sudo mount -t cifs //FREENAS/HOME /mnt/HOME -o user=HOME,uid=arch,gid=wheel,work
 
 ##- Current glib version working with terminator gtk
 upgraded glib2 (2.49.7+6+g3602f93-1 -> 2.50.2-1)
+
+##- HDMI monitor on right 
+xrandr --output eDP-1 --auto --output HDMI-1 --auto --right-of eDP-1

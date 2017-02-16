@@ -193,7 +193,8 @@ bar {
 
 # Set Wallpaper--------------------------------------------------------------{{{
 
-exec_always --no-startup-id feh --bg-scale /home/arch/Pictures/Wallpapers/wallpaper.png
+# exec_always --no-startup-id feh --bg-scale /home/arch/Pictures/Wallpapers/wallpaper.png
+exec_always --no-startup-id /home/arch/.dotfiles/i3/.i3/workspace.auto.background.sh 
 
 # }}}
 
@@ -285,7 +286,7 @@ bindsym Mod1+n [class="Nautilus"], scratchpad show
 
 # bindsym mod1+f exec --no-startup-id "pgrep -c firefox && i3-msg '[class=\\"i3wm - vimperator\\"] focus' || firefox"
 # open firefox, if already open focus firefox
-bindsym mod1+f exec --no-startup-id pgrep -c firefox && i3-msg '[class="Firefox"] focus' || firefox
+bindsym mod1+f exec --no-startup-id pgrep -c firefox && i3-msg '[class="Firefox"] focus, layout stacking' || firefox
 # weechat if not then 
 bindsym mod1+m exec --no-startup-id pgrep -c weechat && i3-msg '[window_role=(?i)weechat] scratchpad show' || terminator --role=weechat --profile=weechat -e weechat
 
@@ -376,12 +377,38 @@ for_window [window_role=(?i)weechat] move window to scratchpad, resize set 1056 
 for_window [window_role=(?i)pacli] move window to scratchpad, resize set 580 450, move absolute position center, move scratchpad, scratchpad show
 # }}}
 
+# Multi Monitor Modes------------------------------------------------------------{{{
+
+## Manual management of external displays
+# Set the shortcuts and what they do
+# set $mode_display Ext Screen (v) VGA ON, (h) HDMI ON, (x) VGA OFF, (y) HDMI OFF
+# mode "$mode_display" {
+#     bindsym v exec --no-startup-id xrandr --output VGA1 --auto --right-of LVDS1, mode "default"
+#     bindsym h exec --no-startup-id xrandr --output HDMI1 --auto --right-of LVDS1, mode "default"
+#     bindsym x exec --no-startup-id xrandr --output VGA1 --auto --off, mode "default"
+#     bindsym y exec --no-startup-id xrandr --output HDMI1 --auto --off, mode "default"
+#
+#     # back to normal: Enter or Escape
+#     bindsym Return mode "default"
+#     bindsym Escape mode "default"
+# }
+# # Declare here the shortcut to bring the display selection menu
+# bindsym $mod+x mode "$mode_display"
+
+# }}}
+
 # i3-Gaps--------------------------------------------------------------------{{{
 
 for_window [class="^.*"] border pixel 0
 
 gaps inner 20
 gaps outer -5
+
+#gaps exceptions per workspace
+workspace 7 gaps inner 0
+workspace 7 gaps outer 0
+workspace 8 gaps inner 0
+workspace 8 gaps outer 0
 
 ## If you want gaps to only be used if there is more than one container on the workspace, you can use
 # smart_gaps on
