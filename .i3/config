@@ -185,16 +185,17 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3blocks -c ~/.i3blocks.conf
+	#output eDP-1
         # status_command python /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
-	# font pango:PowerlineFont 12
+	# font pango:PowerlineFont 8
 }
 
 # }}}
 
 # Set Wallpaper--------------------------------------------------------------{{{
 
-# exec_always --no-startup-id feh --bg-scale /home/arch/Pictures/Wallpapers/wallpaper.png
-exec_always --no-startup-id /home/arch/.dotfiles/i3/.i3/workspace.auto.background.sh 
+exec_always --no-startup-id feh --bg-scale /home/arch/Pictures/Wallpapers/wallpaper.png
+# exec_always --no-startup-id /home/arch/.dotfiles/i3/.i3/workspace.auto.background.sh 
 
 # }}}
 
@@ -318,6 +319,9 @@ bindsym $mod+Shift+v [class=(?i)vlc], move position 16 16, resize set 779 634, m
 #bindsym $mod+y fullscreen disable; floating enable; resize set 600 400; sticky enable; move window to position 1940 54
 bindsym Mod1+v [class=(?i)vlc], scratchpad show
 
+##-sit mpv over yt (qutebrowser)
+for_window [class=(?i)mpv] floating enable, move position 254 60, resize set 858 499, move scratchpad, scratchpad show 
+
 #for_window [class="vlc"] move window to scratchpad
 #bindsym Mod1+v [role="VLC media player"], scratchpad show
 #bindsym Mod1+v exec --no-startup-id vlc --title=vlc, [title="vlc"] scratchpad show
@@ -352,6 +356,15 @@ bindsym Mod1+Tab workspace" Scratch"
 workspace_auto_back_and_forth yes
 force_display_urgency_hint 500 ms
 # focus_on_window_activation smart|urgent|focus|none
+focus_on_window_activation smart
+
+#- 'Move into' bindings
+bindsym $mod+Shift+Ctrl+Left   focus left;  split v;  focus right;  move left
+bindsym $mod+Shift+Ctrl+Down   focus down;  split h;  focus up;     move down
+bindsym $mod+Shift+Ctrl+Up     focus up;    split h;  focus down;   move up
+bindsym $mod+Shift+Ctrl+Right  focus right; split v;  focus left;   move right
+#-??
+bindsym $mod+Shift+w split h; layout tabbed
 
 # }}}
 

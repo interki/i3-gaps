@@ -75,6 +75,7 @@ set laststatus=2
 filetype plugin indent on
 set wildmenu
 set relativenumber
+set number
 "let g:airline_theme='badwolf'
 syntax on
 set showcmd

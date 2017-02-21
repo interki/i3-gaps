@@ -32,7 +32,7 @@ alias 'sortmirror-l'='sudo reflector --verbose -l 200 -p http --sort rate --save
 alias 'commit'='git commit -am "up"'
 #-ssh
 #set $iprange = 10.0.0.
-alias db-pihole='dbclient debian@10.0.0.55'
+alias db-pihole='dbclient debian@10.0.0.54'
 alias db-fnas='dbclient SHOME@10.0.0.20'
 alias db-squid='dbclient bsd@10.0.0.75'
 alias db-wbserv='dbclient bsd@10.0.0.85'
