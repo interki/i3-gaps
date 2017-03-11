@@ -8,6 +8,8 @@ alias l='ls -a --color=auto'
 alias grep='grep --color=auto'
 alias c='clear'
 # alias ?='bind'
+alias sips='python ~/Desktop/scripts/twitch.play.if.live.py'
+alias beehive='cd ~/gocode/src/github.com/muesli/beehive/'
 #-fmpeg
 alias capture='ffmpeg -f x11grab -video_size 1366x768 -i $DISPLAY -f alsa -i default -c:v ffvhuff -c:a flac ~/Documents/videos/capture.mkv'
 alias compress='ffmpeg -i ~/Documents/videos/capture.mkv -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p -c:a copy ~/Documents/videos/output.mkv
@@ -42,7 +44,7 @@ alias db-wbserv='dbclient bsd@10.0.0.85'
 alias twitch='twitch-curses'
 ##-alias take input test 
 # alias fish='echo -n "Enter IP: " && read IP && ping $IP'
-alias livestreamer='echo -n "Enter URL: " && read URL && streamlink $URL high --player-passthrough hls'
+alias livestreamer='echo -n "Enter URL: " && read URL && streamlink -p mpv $URL high --player-passthrough hls'
 #-googler
 alias g='googler'
 alias gg='googler -n 5'

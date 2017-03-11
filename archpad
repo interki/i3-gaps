@@ -17,6 +17,19 @@ xdpyinfo | grep -B2 resolution
 ##- Screen capture no compression
 ffmpeg -f x11grab -video_size 1366x768 -i $DISPLAY -f alsa -i default -c:v ffvhuff -c:a flac ~/Desktop/capture.mkv
 
+
+##-ffmpeg experiments
+ffmpeg -f x11grab -video_size 1366x768 -i $DISPLAY -f alsa -i default -c:v libx264 -qp 0 -c:a flac -preset ultrafast ~/Documents/videos/capture.mkv
+
+ffmpeg \
+    -f x11grab -video_size 960x540 -framerate 30 -i :0.0+0,81 \
+    -codec:v libx264 -qp 0 -preset ultrafast capture.mkv 
+
+
+ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -c:v libx264 -qp 0 -preset ultrafast capture.mkv
+# If you're going to archive the recording or are concerned about file size, re-encode it losslessly again but with a slower preset. Note that since the initial recording was lossless, and the re-encode is lossless too, no quality loss is introduced in this process in any way.
+ffmpeg -i capture.mkv -c:v libx264 -qp 0 -preset veryslow capture_smaller.mkv 
+
 ##- Compress to uploadable size 
 ffmpeg -i capture.mkv -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p -c:a copy output.mkv
 

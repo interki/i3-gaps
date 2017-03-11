@@ -18,19 +18,21 @@
     cursor_color_fg = False
     cursor_shape = ibeam
     delete_binding = automatic
-    font = Liberation Mono for Powerline 10
+    font = Monospace 10
     scrollbar_position = hidden
     show_titlebar = False
+    use_system_font = False
   [[pacli]]
     background_color = "#2e3436"
     background_darkness = 0.16
     cursor_color = "#aaaaaa"
     exit_action = hold
-    font = Liberation Mono for Powerline 10
+    font = Monospace 10
     foreground_color = "#bfc674"
     login_shell = True
     scrollbar_position = hidden
     show_titlebar = False
+    use_system_font = False
   [[scratch]]
     background_darkness = 0.54
     background_type = transparent
@@ -56,17 +58,6 @@
     show_titlebar = False
     use_system_font = False
   [[vim2]]
-    background_color = "#1c1c1c"
-    background_darkness = 0.94
-    background_type = transparent
-    cursor_color = "#aaaaaa"
-    exit_action = hold
-    font = Cousine for Powerline 11
-    login_shell = True
-    scrollbar_position = hidden
-    show_titlebar = False
-    use_system_font = False
-  [[vim3]]
     background_darkness = 0.54
     background_type = transparent
     cursor_color = "#aaaaaa"
@@ -76,6 +67,8 @@
     scrollbar_position = hidden
     show_titlebar = False
     use_system_font = False
+  [[vim3]]
+    cursor_color = "#aaaaaa"
   [[weechat]]
     background_color = "#00212a"
     background_darkness = 0.94

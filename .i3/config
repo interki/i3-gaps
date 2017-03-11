@@ -11,6 +11,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+# set $mod \
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -184,7 +185,8 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3blocks -c ~/.i3blocks.conf
+        # status_command i3blocks -c ~/.i3blocks.conf
+        status_command i3blocks -c ~/.dotfiles/i3/.i3/.i3blocks.conf
 	#output eDP-1
         # status_command python /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
 	# font pango:PowerlineFont 8
@@ -281,7 +283,16 @@ exec --no-startup-id terminator --role=scratch --profile=scratch --command=~/.i3
 #for_window [class="Nautilus"] move window to scratchpad
 #i3-msg '[con_id="0x12345678"] move scratchpad'
 
+##- FAILED FLOATS
+# for_window [class=(?!)simplescreenrecorder], floating enable, move window to scratchpad, resize set 1056 543, scratchpad show, move center 
+# for_window [class=(?!)Simplescreenrecorder] fullscreen disable, floating enable, move position 254 60, resize set 858 550, move scratchpad, scratchpad show 
+# for_window [class=(?!)Simplescreenrecorder] force floating
+# for_window [class=(?!)electrum] move window to scratchpad 
+# for_window [class="electrum", "Electrum"] fullscreen disable, floating enable, move position 254 60, resize set 858 550, move scratchpad, scratchpad show 
+for_window [class="simplescreenrecorder"] floating enable
+
 for_window [class="Nautilus"] move window to scratchpad, resize set 1056 543, move absolute position center, move scratchpad
+# for_window [class="Nautilus"] move window to scratchpad, resize set 1056 543, move center, move scratchpad
 bindsym Mod1+n [class="Nautilus"], scratchpad show
 #no_focus [class="Nautilus"]
 
@@ -296,8 +307,8 @@ bindsym mod1+m exec --no-startup-id pgrep -c weechat && i3-msg '[window_role=(?i
 #bindsym Mod1+m exec --no-startup-id "pgrep -c terminator -e weechat && i3-msg '[class=\\"weechat\\"] focus' || weechat"
 
 # for_window [title="weechat"] move window to scratchpad
-bindsym Mod1+Shift+m exec --no-startup-id terminator --role=weechat --profile=weechat -e weechat
-bindsym Mod1+Shift+k exec --no-startup-id terminator --role=pacli --profile=pacli -e pacli
+# bindsym Mod1+Shift+m exec --no-startup-id terminator --role=weechat --profile=weechat -e weechat
+# bindsym Mod1+Shift+k exec --no-startup-id terminator --role=pacli --profile=pacli -e pacli
 # for_window [window_role=(?i)scratch] move window to scratchpad, resize set 1056 543, move absolute position center, move scratchpad
 
 ##- old binds now elseif toggles
@@ -305,6 +316,7 @@ bindsym Mod1+Shift+k exec --no-startup-id terminator --role=pacli --profile=pacl
 bindsym Mod1+k [window_role=(?i)pacli] scratchpad show
 
 for_window [window_role=(?i)scratch] move window to scratchpad, resize set 1056 543, move absolute position center, move scratchpad
+# for_window [window_role=(?i)scratch] move window to scratchpad, resize set 1056 543, move center, move scratchpad
 bindsym Mod1+c [window_role=(?i)scratch], scratchpad show
 #bindsym Mod1+c exec --no-startup-id terminator --title=freeterm --profile=vim1 -e tmux -u, [title="freeterm"] scratchpad show
 #bindsym Mod1+c exec --no-startup-id terminator --title=freeterm --profile=vim1 -e vim, [title="freeterm"] scratchpad show
@@ -320,7 +332,7 @@ bindsym $mod+Shift+v [class=(?i)vlc], move position 16 16, resize set 779 634, m
 bindsym Mod1+v [class=(?i)vlc], scratchpad show
 
 ##-sit mpv over yt (qutebrowser)
-for_window [class=(?i)mpv] floating enable, move position 254 60, resize set 858 499, move scratchpad, scratchpad show 
+for_window [class=(?i)mpv] fullscreen disable, floating enable, move position 254 60, resize set 858 500, move scratchpad, scratchpad show 
 
 #for_window [class="vlc"] move window to scratchpad
 #bindsym Mod1+v [role="VLC media player"], scratchpad show
@@ -386,8 +398,13 @@ for_window [class=(?i)vlc] floating enable, move position 15 16, resize set 782 
 
 # for_window [class="*[vV]lc*"] floating enable, move position 15 16, resize set 792 644 
 
+# for_window [window_role=(?i)weechat] move window to scratchpad, resize set 1056 543, move center, move scratchpad, scratchpad show
+# for_window [window_role=(?i)weechat] move window to scratchpad, resize set 1056 543, scratchpad show, move center
+
 for_window [window_role=(?i)weechat] move window to scratchpad, resize set 1056 543, move absolute position center, move scratchpad, scratchpad show
 for_window [window_role=(?i)pacli] move window to scratchpad, resize set 580 450, move absolute position center, move scratchpad, scratchpad show
+# for_window [window_role=(?i)weechat] move window to scratchpad, resize set 1056 543, move center, scratchpad show
+# for_window [window_role=(?i)pacli] move window to scratchpad, resize set 580 450, move center, move scratchpad, scratchpad show
 # }}}
 
 # Multi Monitor Modes------------------------------------------------------------{{{

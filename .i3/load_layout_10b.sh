@@ -12,4 +12,4 @@ i3-msg 'workspace 10:  Media; append_layout /home/arch/.config/i3/workspace_1
 (vlc --role 10.1 --class "vlc"  &)    
 (terminator --role 10.2 -e 'mpsyt; bash' &)
 (terminator --role 10.3 -e 'twitch-curses; zsh' &)   
-(terminator --role 10.4 -e 'echo -n "Enter URL: " && read URL && streamlink -p vlc $URL high --player-passthrough hls; zsh' &)
+(terminator --role 10.4 -e 'echo -n "Enter URL: " && read URL && streamlink -p mpv $URL high --player-passthrough hls; zsh' &)
