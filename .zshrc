@@ -45,6 +45,10 @@ alias twitch='twitch-curses'
 ##-alias take input test 
 # alias fish='echo -n "Enter IP: " && read IP && ping $IP'
 alias livestreamer='echo -n "Enter URL: " && read URL && streamlink -p mpv $URL high --player-passthrough hls'
+# use 'pb' in shell to paste to ptpb
+pb () {
+  curl -F "c=@${1:--}" https://ptpb.pw/
+}
 #-googler
 alias g='googler'
 alias gg='googler -n 5'
