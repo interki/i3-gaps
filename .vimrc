@@ -52,6 +52,7 @@ Plugin 'mhartington/oceanic-next'
 Plugin 'scrooloose/nerdtree'
 Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'tomtom/tcomment_vim'
+Plugin 'python-mode/python-mode'
 
 "Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
@@ -152,6 +153,8 @@ let g:startify_custom_header = s:filter_header(['$vim', '', ''])
 "fix startify bug?
 " set viminfo='100,n$HOME/.vim/files/info/viminfo
 
+"set python version for plugin: python-mode
+let g:pymode_python = 'python3'
 
 
 

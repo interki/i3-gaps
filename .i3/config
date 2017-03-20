@@ -186,8 +186,8 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         # status_command i3blocks -c ~/.i3blocks.conf
+	# output eDP-1
         status_command i3blocks -c ~/.dotfiles/i3/.i3/.i3blocks.conf
-	#output eDP-1
         # status_command python /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
 	# font pango:PowerlineFont 8
 }
@@ -271,7 +271,7 @@ bindsym $mod+0 exec --no-startup-id pgrep -c mpsyt && i3-msg '[window_role=(?i)1
 #exec_always --no-startup-id visual-studio-code 
 exec --no-startup-id nautilus
 exec --no-startup-id compton
-exec --no-startup-id easystroke
+# exec --no-startup-id easystroke
 #exec_always --no-startup-id i3-msg 'workspace 9: imux; exec terminator --command=~/.i3/tbash.sh'
 ##### exec_always --no-startup-id exec i3-msg 'workspace 9: imux; exec terminator --role vimux --command=~/.i3/tbash.sh'
 # exec_always --no-startup-id exec i3-msg 'workspace 9: imux; exec terminator --role vimux --command=/home/arch/.dotfiles/i3/.i3/vimuxbash.sh'
