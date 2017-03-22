@@ -34,8 +34,9 @@ icon = {
     "partly-cloudy-night": "",
    }.get(icon, "")
 
-print ("{0}{1}°C".format(icon, round(temperature)), "{0}kph".format(round(wind_speed)), "{0}°".format(wind_bearing), "{0:.1f}".format(pressure - 1000))
-print ("{0}{1}°C".format(icon, round(temperature)), "{0}kph".format(round(wind_speed)), "{0}°".format(wind_bearing), "{0:.1f}".format(pressure - 1000))
+
+print (icon, "{0}°C".format(round(temperature)), "{0}kph".format(round(wind_speed)), "{0}°".format(wind_bearing), "{0:.1f}".format(pressure - 1000))
+print (icon, "{0}°C".format(round(temperature)), "{0}kph".format(round(wind_speed)), "{0}°".format(wind_bearing), "{0:.1f}".format(pressure - 1000))
 
 ##- with summary
 # print ("{0}{1}°C".format(icon, round(temperature)), "~{0}~".format(summary), "{0}kph".format(round(wind_speed)), "{0}°".format(wind_bearing), "{0:.2f}".format(pressure - 1000))
