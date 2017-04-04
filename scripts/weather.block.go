@@ -25,7 +25,7 @@ func main() {
 	// location := "-27.7175,153.2045"
 	// units := "ca"
 
-	var alarm_windy int64 = 30
+	var alarm_windy int64 = 40
 	var temp_warm int64 = 30
 
 	resp, err := http.Get("https://api.darksky.net/forecast/be3c5e1b5870e42570ce6dd5d23a3c13/-27.7175,153.2045?units=ca")
@@ -72,7 +72,7 @@ func main() {
 		icon = ""
 	}
 
-	//- with summary 
+	// - with summary 
 	// fmt.Printf("%v %v°C %v %vkph %v° %.1f\n", icon, temperature, summary, wind_speed, wind_bearing, pressure)
 	// fmt.Printf("%v %v°C %v %vkph %v° %.1f\n", icon, temperature, summary, wind_speed, wind_bearing, pressure)
 
