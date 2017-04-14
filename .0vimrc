@@ -2,8 +2,6 @@
 "python3 powerline_setup()
 "python3 del powerline_setup
 
-
-set nocompatible              " be iMproved, required
 " All system-wide defaults are set in $VIMRUNTIME/archlinux.vim (usually just
 " /usr/share/vim/vimfiles/archlinux.vim) and sourced by the call to :runtimeir	
 " you can find below.  If you wish to change any of those settings, you should
@@ -46,6 +44,8 @@ Plugin 'mhartington/oceanic-next'
 Plugin 'scrooloose/nerdtree'
 Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'tomtom/tcomment_vim'
+Plugin 'jdkanani/vim-material-theme'
+Plugin 'kristijanhusak/vim-hybrid-material'
 
 "Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
@@ -97,6 +97,7 @@ set foldlevelstart=0
  " Theme
 syntax enable
 "set t_Co=256
+" colorscheme hybrid_material
 colorscheme OceanicNext
 let g:airline_theme='oceanicnext'
 set background=dark

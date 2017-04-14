@@ -7,32 +7,33 @@ import (
 )
 
 type Currently struct {
-	Currently D
+	Currently Data
 }
-type D struct {
-	Icon			string
+type Data struct {
+	Icon					string
 	Temperature		float64
-	Summary			string
-	WindSpeed		float64
+	Summary				string
+	WindSpeed			float64
 	WindBearing		int64
-	Pressure		float64
+	Pressure			float64
 }
 
 func main() {
 
 	//- customisation
-	// api_key := "be3c5e1b5870e42570ce6dd5d23a3c13"
-	// location := "-27.7175,153.2045"
-	// units := "ca"
+	api_key := "be3c5e1b5870e42570ce6dd5d23a3c13"
+	location := "-27.7175,153.2045"
+	units := "ca"
 
 	var alarm_windy int64 = 40
 	var temp_warm int64 = 30
 
-	resp, err := http.Get("https://api.darksky.net/forecast/be3c5e1b5870e42570ce6dd5d23a3c13/-27.7175,153.2045?units=ca")
+	url := fmt.Sprintf("https://api.darksky.net/forecast/%s/%s?units=%s", api_key, location, units)
+	resp, err := http.Get(url)
 	if err != nil {
 		fmt.Println(err)
 
-	}
+	}	
 	var current Currently
 	err = json.NewDecoder(resp.Body).Decode(&current)
 	defer resp.Body.Close()
@@ -44,14 +45,14 @@ func main() {
 	temperature := int64(current.Currently.Temperature + 0.5)
 	// summary := (current.Currently.Summary)
 	wind_speed := int64(current.Currently.WindSpeed + 0.5)
-	wind_bearing := (current.Currently.WindBearing)
-	pressure := (current.Currently.Pressure - 1000)
+	// wind_bearing := (current.Currently.WindBearing)
+	// pressure := (current.Currently.Pressure - 1000)
 
 	switch icon {
     case "clear-day":
 		icon = ""
-    case "clear-night":
-		icon = ""
+	case "clear-night":
+		icon = ""		
     case "rain":
 		icon = ""
     case "snow":
@@ -72,12 +73,17 @@ func main() {
 		icon = ""
 	}
 
-	// - with summary 
+	//- full 
 	// fmt.Printf("%v %v°C %v %vkph %v° %.1f\n", icon, temperature, summary, wind_speed, wind_bearing, pressure)
 	// fmt.Printf("%v %v°C %v %vkph %v° %.1f\n", icon, temperature, summary, wind_speed, wind_bearing, pressure)
 
-	fmt.Printf("%v %v°C %vkph %v° %.1f\n", icon, temperature, wind_speed, wind_bearing, pressure)
-	fmt.Printf("%v %v°C %vkph %v° %.1f\n", icon, temperature, wind_speed, wind_bearing, pressure)
+	//- without summary
+	// fmt.Printf("%v %v°C %vkph %v° %.1f\n", icon, temperature, wind_speed, wind_bearing, pressure)
+	// fmt.Printf("%v %v°C %vkph %v° %.1f\n", icon, temperature, wind_speed, wind_bearing, pressure)
+
+	//- icon + temp only
+	fmt.Printf("%v %v°C\n", icon, temperature)
+	fmt.Printf("%v %v°C\n", icon, temperature)
 
 	//- define colour 
 	if wind_speed >= alarm_windy {
