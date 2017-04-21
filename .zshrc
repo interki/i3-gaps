@@ -10,6 +10,7 @@ alias c='clear'
 # alias ?='bind'
 alias sips='python ~/Desktop/scripts/twitch.play.if.live.py'
 alias beehive='cd ~/gocode/src/github.com/muesli/beehive/'
+alias dots='cd ~/.dotfiles/i3'
 #-fmpeg
 alias capture='ffmpeg -f x11grab -video_size 1366x768 -i $DISPLAY -f alsa -i default -c:v ffvhuff -c:a flac ~/Documents/videos/capture.mkv'
 alias compress='ffmpeg -i ~/Documents/videos/capture.mkv -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p -c:a copy ~/Documents/videos/output.mkv

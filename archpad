@@ -44,3 +44,20 @@ xrandr --output eDP-1 --auto --output HDMI-1 --auto --right-of eDP-1
 
 ##- Turn off screen standby
 sudo xset s off -dpms
+
+##- Changes made to run Nylas:
+#So I got past the password prompt by adding the following changes to my system. Just make sure to back these files up first. Messing up these files can lock you out of your system.
+#
+#I added this to the end of the /etc/pam.d/passwd
+#
+#password optional pam_gnome_keyring.so
+#
+#Then adding this the end of /etc/pam.d/login
+#
+#session    optional     pam_gnome_keyring.so        auto_start
+#auth       optional     pam_gnome_keyring.so
+#Then I added this line to the end of my ~/.xinitrc
+#
+#eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+#export SSH_AUTH_SOCK
+#Rebooted and Nylas loads without the error
