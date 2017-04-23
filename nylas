@@ -1,0 +1,23 @@
+
+#- Changes made to run Nylas:
+So I got past the password prompt by adding the following changes to my system. Just make sure to back these files up first. Messing up these files can lock you out of your system.
+
+I added this to the end of the /etc/pam.d/passwd
+
+password optional pam_gnome_keyring.so
+
+Then adding this the end of /etc/pam.d/login
+
+session    optional     pam_gnome_keyring.so        auto_start
+auth       optional     pam_gnome_keyring.so
+Then I added this line to the end of my ~/.xinitrc
+
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+Rebooted and Nylas loads without the error
+
+Start SSH and Secrets components of keyring daemon
+If you are starting Gnome Keyring with a display manager or the Pam method described above and you are NOT using Gnome, Unity or Mate as your desktop you may find that the SSH and Secrets components are not being started automatically. You can fix this by copying the desktop files gnome-keyring-ssh.desktop and gnome-keyring-secrets.desktop from /etc/xdg/autostart/ to ~/.config/autostart/ and deleting the OnlyShowIn line.
+$ cp /etc/xdg/autostart/{gnome-keyring-secrets.desktop,gnome-keyring-ssh.desktop} ~/.config/autostart/
+$ sed -i '/^OnlyShowIn.*$/d' ~/.config/autostart/gnome-keyring-secrets.desktop
+$ sed -i '/^OnlyShowIn.*$/d' ~/.config/autostart/gnome-keyring-ssh.desktop
