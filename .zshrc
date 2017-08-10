@@ -45,7 +45,7 @@ alias db-wbserv='dbclient bsd@10.0.0.85'
 alias twitch='twitch-curses'
 ##-alias take input test 
 # alias fish='echo -n "Enter IP: " && read IP && ping $IP'
-alias livestreamer='echo -n "Enter URL: " && read URL && streamlink -p mpv $URL high --player-passthrough hls'
+alias livestreamer='echo -n "Enter URL: " && read URL && streamlink -p mpv $URL 720p --player-passthrough hls'
 # use 'pb' in shell to paste to ptpb
 pb () {
   curl -F "c=@${1:--}" https://ptpb.pw/
