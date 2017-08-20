@@ -3,8 +3,11 @@
 #-shell
 autoload -Uz colors && colors
 alias ~='cd ~'
-alias ls='ls --color=auto'
-alias l='ls -a --color=auto'
+# alias ls='ls --color=auto'
+alias ls='exa'
+# alias l='ls -a --color=auto'
+alias l='exa -a'
+alias ll='exa -l'
 alias grep='grep --color=auto'
 alias c='clear'
 # alias ?='bind'
