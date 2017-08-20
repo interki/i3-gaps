@@ -278,7 +278,7 @@ exec --no-startup-id compton
 #exec_always --no-startup-id i3-msg 'workspace 9: imux; exec terminator --command=~/Desktop/Virubybash.sh'
 
 ##- removed ctrl-c vim-scratch 
-exec --no-startup-id terminator --role=scratch --profile=scratch --command=~/.i3/t3bash.sh
+#exec --no-startup-id terminator --role=scratch --profile=scratch --command=~/.i3/t3bash.sh
 
 #Note: Sticky works with Scratch
 
