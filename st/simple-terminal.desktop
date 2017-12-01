@@ -1,9 +1,11 @@
 [Desktop Entry]
-Name=Simple Terminal
+Name=st
+# Name=Simple Terminal
 GenericName=Terminal
 Comment=standard terminal emulator for the X window system
 # Exec=st -t "Suckless Terminal" -f "Source Code Pro:style=Semibold:size=12" -g "80x24"
-Exec=st -t "Suckless Terminal"
+Exec=st -t "Suckless Terminal" -f "DejaVuSansMono Nerd Font Mono:style=Book:pixelsize=16:antialias=true:autohint=true"
+# Exec=st -t "Suckless Terminal"
 Terminal=false
 Type=Application
 Encoding=UTF-8
