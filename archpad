@@ -45,3 +45,5 @@ xrandr --output eDP-1 --auto --output HDMI-1 --auto --right-of eDP-1
 ##- Turn off screen standby
 sudo xset s off -dpms
 
+##- List installed fonts
+fc-list 
