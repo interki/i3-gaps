@@ -47,3 +47,7 @@ sudo xset s off -dpms
 
 ##- List installed fonts
 fc-list 
+
+##- Install from PKGBUILD
+makepkg -fc # (force/clean)
+sudo pacman -U <packageName>.pkg.tar.xz
