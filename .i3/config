@@ -366,7 +366,11 @@ bindsym $mod+Mod1+Left workspace prev
 
 #non-defualt binds/settings
 # bindsym Mod1+Tab workspace_auto_back_and_forth
-bindsym Mod1+Tab workspace" Scratch"
+# bindsym Mod1+Tab workspace" Scratch"
+
+exec --no-startup-id /home/arch/.dotfiles/i3/.i3/focus-last.sh
+bindsym Mod1+Tab [con_mark=_last] focus
+
 workspace_auto_back_and_forth yes
 force_display_urgency_hint 500 ms
 # focus_on_window_activation smart|urgent|focus|none
