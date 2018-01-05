@@ -7,7 +7,7 @@ alias ~='cd ~'
 alias ls='exa'
 # alias l='ls -a --color=auto'
 alias l='exa -a'
-alias ll='exa -l'
+alias ll='exa -lah'
 alias grep='grep --color=auto'
 alias c='clear'
 # alias ?='bind'
@@ -16,8 +16,7 @@ alias beehive='cd ~/gocode/src/github.com/muesli/beehive/'
 alias dots='cd ~/.dotfiles/i3'
 #-fmpeg
 alias capture='ffmpeg -f x11grab -video_size 1366x768 -i $DISPLAY -f alsa -i default -c:v ffvhuff -c:a flac ~/Documents/videos/capture.mkv'
-alias compress='ffmpeg -i ~/Documents/videos/capture.mkv -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p -c:a copy ~/Documents/videos/output.mkv
-'
+alias compress='ffmpeg -i ~/Documents/videos/capture.mkv -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p -c:a copy ~/Documents/videos/output.mkv'
 #-network
 alias homeshare='sudo mount -t cifs //FREENAS/HOME /mnt/HOME -o user=HOME,uid=arch,gid=wheel,workgroup=workgroup,ip=10.0.0.20,iocharset=utf8'
 alias hsync='rsync -r -v --progress -s /home/arch/Documents/sync/ /mnt/HOME/Documents/sync'
@@ -38,7 +37,8 @@ alias 'sortmirror-l'='sudo reflector --verbose -l 200 -p http --sort rate --save
 alias 'commit'='git commit -am "up"'
 #-ssh
 #set $iprange = 10.0.0.
-alias db-pihole='dbclient debian@10.0.0.54'
+alias db-pihole='dbclient pi@192.168.1.154'
+alias db-centos='dbclient centos@192.168.1.105'
 alias db-fnas='dbclient SHOME@10.0.0.20'
 alias db-squid='dbclient bsd@10.0.0.75'
 alias db-wbserv='dbclient bsd@10.0.0.85'
@@ -87,3 +87,9 @@ source /home/arch/builds/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 cd() {
   echo && builtin cd "$@" && l;
 }
+
+# https://www.smashingmagazine.com/2015/06/efficient-image-resizing-with-imagemagick/
+
+smartresize() {
+	   mogrify -path $3 -filter Triangle -define filter:support=2 -thumbnail $2 -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB $1
+   }

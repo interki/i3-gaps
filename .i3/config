@@ -442,6 +442,9 @@ for_window [class="^.*"] border pixel 0
 gaps inner 20
 gaps outer -5
 
+bindsym $mod+Mod1+comma gaps inner all set 0; gaps outer all set 0
+bindsym $mod+Mod1+period gaps inner all set 15; gaps outer all set 0
+
 #gaps exceptions per workspace
 workspace 7 gaps inner 0
 workspace 7 gaps outer 0
