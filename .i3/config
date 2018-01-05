@@ -133,6 +133,7 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 assign [class="Firefox"] $workspace2
+assign [class="qutebrowser"] $workspace2
 assign [class="Code"] $workspace3
 #assign [class="Nautilus"] $workspace8
 assign [class="Gimp"] $workspace8
@@ -300,7 +301,8 @@ bindsym Mod1+n [class="Nautilus"], scratchpad show
 
 # bindsym mod1+f exec --no-startup-id "pgrep -c firefox && i3-msg '[class=\\"i3wm - vimperator\\"] focus' || firefox"
 # open firefox, if already open focus firefox
-bindsym mod1+f exec --no-startup-id pgrep -c firefox && i3-msg '[class="Firefox"] focus' || firefox
+# bindsym mod1+f exec --no-startup-id pgrep -c firefox && i3-msg '[class="Firefox"] focus' || firefox
+bindsym mod1+f exec --no-startup-id pgrep -c qutebrowser && i3-msg '[class="qutebrowser"] focus' || qutebrowser
 # weechat if not then 
 bindsym mod1+m exec --no-startup-id pgrep -c weechat && i3-msg '[window_role=(?i)weechat] scratchpad show' || terminator --role=weechat --profile=weechat -e weechat
 
