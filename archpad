@@ -52,3 +52,6 @@ fc-list
 updpkgsums # regenerate checksums
 makepkg -fc # (force/clean)
 sudo pacman -U <packageName>.pkg.tar.xz
+
+##- st PKGBUILD reference
+http://brianbuccola.com/how-to-build-and-install-st-suckless-simple-terminal-from-source-on-arch-linux/
