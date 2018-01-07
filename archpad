@@ -49,5 +49,6 @@ sudo xset s off -dpms
 fc-list 
 
 ##- Install from PKGBUILD
+updpkgsums # regenerate checksums
 makepkg -fc # (force/clean)
 sudo pacman -U <packageName>.pkg.tar.xz

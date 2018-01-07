@@ -105,7 +105,8 @@ set $workspace3 "3:  Visual Studio"
 #set $workspace8 "8:  Nautilus"
 set $workspace7 "7: kcape"
 set $workspace8 "8: imp"
-set $workspace9 "9: imux"
+# set $workspace9 "9: imux"
+set $workspace9 "9:  st"
 set $workspace10 "10:  Media" #
 
 # switch to workspace9
@@ -117,7 +118,8 @@ bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace $workspace7
 bindsym $mod+8 workspace $workspace8
-#bindsym $mod+9 workspace $workspace9 #replaced line 224
+bindsym $mod+9 workspace $workspace9 
+# bindsym $mod+9 workspace $workspace9 #replaced line 224
 #bindsym $mod+0 workspace $workspace10 #replaced line 254
 
 # move focused container to workspace
@@ -228,8 +230,10 @@ exec_always --no-startup-id feh --bg-scale /home/arch/Pictures/Wallpapers/wallpa
 # exec_always --no-startup-id /home/arch/.dotfiles/i3/.i3/load_layout_1.sh
 exec --no-startup-id /home/arch/.dotfiles/i3/.i3/load_layout_1.sh
 # exec_always --no-startup-id exec /home/arch/.dotfiles/i3/.i3/load_layout_vimux.sh
-bindsym $mod+Mod1+9 exec --no-startup-id exec /home/arch/.dotfiles/i3/.i3/load_layout_vimux.sh
-bindsym $mod+9 exec --no-startup-id pgrep -c -f Vi && i3-msg '[window_role="vimux"] focus' || ~/.config/i3/load_layout_vimux.sh
+
+## -the follow two lines where uncommented as part of the vimux workspace
+# bindsym $mod+Mod1+9 exec --no-startup-id exec /home/arch/.dotfiles/i3/.i3/load_layout_vimux.sh
+# bindsym $mod+9 exec --no-startup-id pgrep -c -f Vi && i3-msg '[window_role="vimux"] focus' || ~/.config/i3/load_layout_vimux.sh
 bindsym Mod1+j exec --no-startup-id pgrep -c pacli && i3-msg '[window_role="pacli"] scratchpad show' || terminator --role=pacli --profile=pacli -e pacli
 
 # bindsym $mod+9 exec --no-startup-id pgrep -c -f 'tmux attach -t Vi' && i3-msg '[window_role="vimux"] focus' || /home/arch/.dotfiles/i3/.i3/load_layout_vimux.sh

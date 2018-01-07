@@ -13,7 +13,7 @@ source=("http://dl.suckless.org/st/$pkgname-$pkgver.tar.gz"
         "config.h"
         "${_patches[@]}")
 md5sums=('29b2a599cf1511c8062ed8f025c84c63'
-         '908ee63983bd9e760c09b336b764cb27'
+         '2ffdaff8f704fcdde61cd1e05caf527b'
          '9b3a3e9ecea764dbb79920c165591c23'
          '831b8bdc34b48a3290e39ac9aca2906f')
 
