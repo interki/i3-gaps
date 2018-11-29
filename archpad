@@ -55,3 +55,9 @@ sudo pacman -U <packageName>.pkg.tar.xz
 
 ##- st PKGBUILD reference
 http://brianbuccola.com/how-to-build-and-install-st-suckless-simple-terminal-from-source-on-arch-linux/
+
+##- crontab alarm
+0 5 * * * /bin/pactl set-sink-volume 0 100\%
+0 5 * * * /bin/pactl set-sink-mute 0 0
+5 5 * * * export DISPLAY=:1 && /usr/local/bin/mpv --force-window /home/centos/Downloads/initial.mp3
+10 5 * * * export DISPLAY=:1 && /usr/local/bin/mpv --force-window /home/centos/Downloads/loud.mp3
