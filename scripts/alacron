@@ -1,0 +1,5 @@
+50 4 * * * /bin/pactl set-sink-volume 0 100\%
+50 4 * * * /bin/pactl set-sink-mute 0 0
+0 5 * * * export DISPLAY=:1 && /usr/local/bin/mpv --force-window /home/centos/Downloads/initial.mp3
+5 5 * * * export DISPLAY=:1 && /usr/local/bin/mpv --force-window /home/centos/Downloads/loud.mp3
+10 5 * * * /bin/pactl set-sink-volume 0 25\%
